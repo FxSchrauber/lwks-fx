@@ -1,7 +1,7 @@
 # lwks-fx-Windows_only
 Lightworks user effects with limited compatibility
 
-## [Rhythmic_pulsation](Rhythmic_pulsation/README.md)
+## [Rhythmic pulsation](Rhythmic_pulsation/README.md)
 
 
 
