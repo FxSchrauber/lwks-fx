@@ -1,8 +1,8 @@
 *[[Return to parent page](../README.md)]*  
 
-# Rhythmic_pulsation
+# Rhythmic pulsation
 
-### [Download as zip-file](Rhythmic_pulsation_20180405.zip)
+### [Download "Rhythmic_pulsation_20180405.fx" as zip-file](Rhythmic_pulsation_20180405.zip)
 
 ### Effect description:  The effect creates a cyclically repeating zoom. 
 In addition to the frames per cycle, the zoom behavior within the cycles can also be set. For this purpose, the effect itself generates a curve graphic in order to be able to adjust the behavior more precisely. 
@@ -34,7 +34,7 @@ Since Lightworks 14.5 it is possible for an effect to automatically determine th
 
 ---------------------------------------------------------------------------
 
-[Previous_versions](Previous_versions/Rhythmic_pulsation_20170519.fx?raw=true)  
+[Previous_versions "Rhythmic_pulsation_20170519.fx"](Previous_versions/Rhythmic_pulsation_20170519.fx?raw=true)  
 [Similar versions "Heartbeat"](https://www.lwks.com/index.php?option=com_kunena&func=view&catid=7&id=121275&Itemid=81#121626)  
 [Intermediate versions were created during the effect development:](https://www.lwks.com/index.php?option=com_kunena&func=view&catid=7&id=9259&limit=15&limitstart=840&Itemid=81#122190) (and the pages following the link)
 
