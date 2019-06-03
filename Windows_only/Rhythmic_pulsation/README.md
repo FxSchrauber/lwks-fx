@@ -2,7 +2,7 @@
 
 # Rhythmic pulsation
 
-### ["Rhythmic_pulsation_20180405.fx"](Rhythmic_pulsation_20180405.fx)  
+### [Rhythmic_pulsation_20180405.fx](Rhythmic_pulsation_20180405.fx)  
 ### [Download as zip-file](Rhythmic_pulsation_20180405.zip)
 
 ### Effect description:  The effect creates a cyclically repeating zoom. 
