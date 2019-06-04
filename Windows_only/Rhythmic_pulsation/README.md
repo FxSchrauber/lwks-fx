@@ -1,5 +1,3 @@
-*[[Return to parent page](../README.md)]*  
-
 # Rhythmic pulsation
 
 ### Filename: <a href="Rhythmic_pulsation_20180405.fx" download>Rhythmic_pulsation_20180405.fx</a> 
