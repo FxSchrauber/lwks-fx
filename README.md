@@ -9,7 +9,7 @@ The archive with many effects developed and tested by users can be found in the 
 
 ----------------------------------------------------------------------------
 
-### Below are some additional effects.
+### Additional effects:
 Some of these effects have limited compatibility, others are prototypes whose functionality should be improved or tested.  
 Maybe some of the effects meet your requirements.  If not, you are welcome to develop the code further.
 
