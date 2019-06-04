@@ -21,7 +21,7 @@
 // occasionally pause for 2 frames at a position to remain synchronized with the set value.
 //
 //
-// Note also the document: Dynamically controlled effects __ warning symbols.pdf
+// Note also the document: warning_symbols.pdf
 //
 //
 // Version 14.5 update 5 December 2017 by jwrl.
