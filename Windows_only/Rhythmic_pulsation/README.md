@@ -9,7 +9,7 @@ A prerequisite for the internal effect calculations is that you correctly set th
 This **[Video (YouTube)][1]** shows how the timing of the effect can be adjusted exactly with the help of Cue in the Timeline: 
 
 The effect also gives some feedback on the effect status and does some plausibility checks. The meaning of the warnings and confirmations is described in this PDF document:  
-**[Meaning of displayed warning symbols](Documentation/warning_symbols.pdf)**  
+**[Meaning of displayed warning symbols][2]**  
 Because the effect was developed for an older Lightworks version, it cannot be excluded that individual warnings react differently than documented.
 
 --------------------------------------------------------------------------
@@ -27,3 +27,4 @@ Cause of incompatibility with other platforms: unknown
 
 
 [1]:https://www.youtube.com/watch?v=YYAMn6vOAbo
+[2]:Documentation/warning_symbols.pdf
