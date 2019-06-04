@@ -14,6 +14,7 @@ Since Lightworks 14.5 it is possible for an effect to automatically determine th
 
 ---------------------------------------------------------------------------
 
+<a href="../Previous_versions/Rhythmic_pulsation_20170519.fx" download>Previous_versions “Rhythmic_pulsation_20170519.fx”</a>  
 [Previous_versions "Rhythmic_pulsation_20170519.fx"](../Previous_versions/Rhythmic_pulsation_20170519.fx?raw=true)  
 [Similar versions "Heartbeat"](https://www.lwks.com/index.php?option=com_kunena&func=view&catid=7&id=121275&Itemid=81#121626)  
 [Intermediate versions were created during the effect development:](https://www.lwks.com/index.php?option=com_kunena&func=view&catid=7&id=9259&limit=15&limitstart=840&Itemid=81#122190) (and the pages following the link)
