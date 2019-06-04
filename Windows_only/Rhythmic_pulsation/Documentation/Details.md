@@ -1,3 +1,6 @@
+
+*[[Return to parent page]](../README.md)*  
+
 ## More details (Rhythmic pulsation)
 
 ### Adjustment note: 
@@ -20,7 +23,6 @@ Since Lightworks 14.5 it is possible for an effect to automatically determine th
 <a href="https://www.lwks.com/index.php?option=com_kunena&func=view&catid=7&id=9259&limit=15&limitstart=840&Itemid=81#122190" target="blank">Intermediate versions were created during the effect development</a>
 (and the pages following the link)  
 
-*[[Return to parent page]](../README.md)*  
 
 
 
