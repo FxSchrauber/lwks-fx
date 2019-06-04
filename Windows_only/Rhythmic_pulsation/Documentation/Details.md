@@ -10,7 +10,8 @@ For cycle frames with decimal places, the cycle progress (and the marker) will o
 --------------------------------------------------------------------------
 
 #### More recent alternative effects:
-Since Lightworks 14.5 it is possible for an effect to automatically determine the effect runtime. This is implemented in the Cyclic [Remote Control](1). If you control a suitable zoom effect with this remote control, you can achieve the same result (and control even more effects if necessary).
+Since Lightworks 14.5 it is possible for an effect to automatically determine the effect runtime. This is implemented in the Cyclic
+<a href="https://www.lwks.com/index.php?option=com_kunena&func=view&catid=7&id=188603&Itemid=81#ftop" target="blank">Remote Control</a>. If you control a suitable zoom effect with this remote control, you can achieve the same result (and control even more effects if necessary).
 
 ---------------------------------------------------------------------------
 
