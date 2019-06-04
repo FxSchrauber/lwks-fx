@@ -6,7 +6,7 @@
 ### Effect description:  The effect creates a cyclically repeating zoom. 
 In addition to the frames per cycle, the zoom behavior within the cycles can also be set. For this purpose, the effect itself generates a curve graphic in order to be able to adjust the behavior more precisely. 
 A prerequisite for the internal effect calculations is that you correctly set the effect runtime in frames in the effect.   
-This video shows how the timing of the effect can be adjusted exactly with the help of Cue in the Timeline: **[youtube.com/watch?v=YYAMn6vOAbo](https://www.youtube.com/watch?v=YYAMn6vOAbo)**  
+This video shows how the timing of the effect can be adjusted exactly with the help of Cue in the Timeline: **![youtube.com/watch?v=YYAMn6vOAbo](https://www.youtube.com/watch?v=YYAMn6vOAbo)**  
 
 The effect also gives some feedback on the effect status and does some plausibility checks. The meaning of the warnings and confirmations is described in this PDF document:  
 **[Meaning of displayed warning symbols](Documentation/warning_symbols.pdf)**  
