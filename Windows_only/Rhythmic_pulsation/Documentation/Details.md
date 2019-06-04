@@ -10,12 +10,17 @@ For cycle frames with decimal places, the cycle progress (and the marker) will o
 --------------------------------------------------------------------------
 
 #### More recent alternative effects:
-Since Lightworks 14.5 it is possible for an effect to automatically determine the effect runtime. This is implemented in the Cyclic [Remote Control](https://www.lwks.com/index.php?option=com_kunena&func=view&catid=7&id=188603&Itemid=81#ftop). If you control a suitable zoom effect with this remote control, you can achieve the same result (and control even more effects if necessary).
+Since Lightworks 14.5 it is possible for an effect to automatically determine the effect runtime. This is implemented in the Cyclic [Remote Control](1). If you control a suitable zoom effect with this remote control, you can achieve the same result (and control even more effects if necessary).
 
 ---------------------------------------------------------------------------
 
-[Previous_versions "Rhythmic_pulsation_20170519.fx"](Previous_versions/Rhythmic_pulsation_20170519.fx?raw=true)  
+[Previous_versions "Rhythmic_pulsation_20170519.fx"](../Previous_versions/Rhythmic_pulsation_20170519.fx?raw=true)  
 [Similar versions "Heartbeat"](https://www.lwks.com/index.php?option=com_kunena&func=view&catid=7&id=121275&Itemid=81#121626)  
 [Intermediate versions were created during the effect development:](https://www.lwks.com/index.php?option=com_kunena&func=view&catid=7&id=9259&limit=15&limitstart=840&Itemid=81#122190) (and the pages following the link)
 
 *[[Return to parent page]](../README.md)*  
+
+
+
+
+[1]:https://www.lwks.com/index.php?option=com_kunena&func=view&catid=7&id=188603&Itemid=81#ftop
