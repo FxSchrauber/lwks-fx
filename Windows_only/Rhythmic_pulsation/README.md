@@ -25,9 +25,9 @@ Cause of incompatibility with other platforms: unknown
 
 ### [More details](Documentation/Details.md)  
 
-test11:
+test12:
 
-<iframe width="640"  height="360"  src="https://www.youtube.com/embed/YYAMn6vOAbo" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/YYAMn6vOAbo" allowfullscreen></iframe>
 
 
 [2]:Documentation/warning_symbols.pdf
