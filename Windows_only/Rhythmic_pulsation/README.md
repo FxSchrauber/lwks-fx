@@ -10,7 +10,7 @@ In addition to the frames per cycle, the zoom behavior within the cycles can als
 A prerequisite for the internal effect calculations is that you correctly set the effect runtime in frames in the effect.  
 This  **<a href="https://www.youtube.com/watch?v=YYAMn6vOAbo" target="blank">Video (YouTube)</a>**
 shows how the timing of the effect can be adjusted exactly with the help of Cue in the timeline.
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/YYAMn6vOAbo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="600" src="https://www.youtube.com/embed/YYAMn6vOAbo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 The effect also gives some feedback on the effect status and does some plausibility checks. The meaning of the warnings and confirmations is described in this PDF document:  
 **[Meaning of displayed warning symbols][2]**  
