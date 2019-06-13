@@ -7,7 +7,7 @@
 
 ## Strength: 
 ![](IMG/Strength.jpg)
-  - **Move**
+  - **Move**  
     Details in progress  
   - **Automatic**  
   ![](IMG/Automatic.jpg)
@@ -19,7 +19,7 @@
       Details in progress
     - **Secure zoom; edges never visible**  
        Details in progress
-  - **XY Shake ratio**
+  - **XY Shake ratio**  
     Details in progress
 
 ---------------------------------------------
