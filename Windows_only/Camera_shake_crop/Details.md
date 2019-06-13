@@ -10,15 +10,15 @@
   - **Move**  
     Details in progress  
   - **Automatic**  
-  ![](IMG/Automatic.jpg)
+  ![](IMG/Automatic.jpg)  
     - **Mirrored edges (no zoom)**  
-      Details in progress
+      Details in progress  
     - **Zoom; mirrored edges visible**  
-      Details in progress
+      Details in progress  
     - **Zoom; mirrored edges maybe visible**  
-      Details in progress
+      Details in progress  
     - **Secure zoom; edges never visible**  
-       Details in progress
+       Details in progress  
   - **XY Shake ratio**  
     Details in progress
 
@@ -32,7 +32,7 @@
 ### Crop & mirror edges
 ![](IMG/Crop.jpg)  
   -**Crop and mirror behavior:**  
-  ![](IMG/Reflection.jpg)
+  ![](IMG/Reflection.jpg)  
     - **Reflection on set edges acting on incoming frames**  
       Details in progress  
     - **Reflection on the edges of the incoming frame**  
