@@ -46,7 +46,7 @@
   - **Crop color**
     Details in progress  
     
-    --------------------------------------------
+--------------------------------------------
     
 #### Random values
 Generating the apparent random values to produce the shaking.  
