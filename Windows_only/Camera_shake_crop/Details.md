@@ -1,14 +1,16 @@
 *[[Return to parent page]](../README.md)*  
 
 ## More details (Camera shake & crop & reflections)
+![](img2.JPG)  
 
-![](img2.JPG)
+---------------------------------------------
 
 ### Strength: 
 ![](Strength.jpg)
   - **Move**
     Details in progress  
   - **Automatic**
+  ![](Automatic.jpg)
     - **Mirrored edges (no zoom)**  
       Details in progress
     - **Zoom; mirrored edges visible**  
@@ -20,7 +22,11 @@
   - **XY Shake ratio**
     Details in progress
 
+---------------------------------------------
 
+### Speed
+  - Details in progress
 
+---------------------------------------------
 
 
