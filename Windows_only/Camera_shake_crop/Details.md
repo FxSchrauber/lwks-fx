@@ -1,11 +1,11 @@
 *[[Return to parent page]](../README.md)*  
 
-## More details (Camera shake & crop & reflections)
+# More details (Camera shake & crop & reflections)
 ![](IMG/img2.jpg)  
 
 ---------------------------------------------
 
-### Strength: 
+## Strength: 
 ![](IMG/Strength.jpg)
   - **Move**
     Details in progress  
@@ -29,8 +29,16 @@
 
 ---------------------------------------------
 
-
-![](IMG/Crop.jpg)
-
-![](IMG/Reflection.jpg)
+## Crop & mirror edges
+![](IMG/Crop.jpg)  
+  -**Crop and mirror behavior:**  
+  ![](IMG/Reflection.jpg)  
+    - **Reflection on set edges acting on incoming frames**  
+      Details in progress
+    - **Reflection on the edges of the incoming frame**  
+      Details in progress
+    - **NO cropping ; Reflection on the set edges**   
+      Details in progress
+    
+  
 
