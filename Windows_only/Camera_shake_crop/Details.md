@@ -6,11 +6,11 @@
 ---------------------------------------------
 
 ### Strength: 
-![](Strength.jpg)
+![](IMG/Strength.jpg)
   - **Move**
     Details in progress  
   - **Automatic**
-  ![](Automatic.jpg)
+  ![](IMG/Automatic.jpg)
     - **Mirrored edges (no zoom)**  
       Details in progress
     - **Zoom; mirrored edges visible**  
