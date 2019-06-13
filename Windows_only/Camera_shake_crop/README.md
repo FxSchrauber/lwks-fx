@@ -10,7 +10,9 @@
 
 --------------------------------------------------------------------------
 
-### Effect description:  Horizontal and vertical shifts based on a random generator.
+### Effect description:
+Horizontal and vertical shifts based on a random generator.  
+
 #### Features:
 - Several automatic zoom modes to avoid the visibility of the frame edges.  
 - Different reflection modes of the edges to allow a low zoom at strong shifts.  
