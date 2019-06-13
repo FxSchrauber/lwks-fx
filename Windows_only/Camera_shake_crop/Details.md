@@ -5,7 +5,7 @@
 
 ---------------------------------------------
 
-### Strength: 
+### Strength:
 ![](IMG/Strength.jpg)
   - **Move**  
     Details in progress  
@@ -32,13 +32,13 @@
 ### Crop & mirror edges
 ![](IMG/Crop.jpg)  
   -**Crop and mirror behavior:**  
-  ![](IMG/Reflection.jpg)  
+  ![](IMG/Reflection.jpg)
     - **Reflection on set edges acting on incoming frames**  
-      Details in progress
+      Details in progress  
     - **Reflection on the edges of the incoming frame**  
-      Details in progress
-    - **NO cropping ; Reflection on the set edges**   
-      Details in progress
+      Details in progress  
+    - **NO cropping ; Reflection on the set edges**  
+      Details in progress  
   - **Top & Bottom**
     Details in progress
   - **Left & Right**
