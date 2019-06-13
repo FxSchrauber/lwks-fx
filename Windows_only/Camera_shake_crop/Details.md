@@ -30,7 +30,7 @@
 ---------------------------------------------
 
 
-![](IMH/Crop.jpg)
+![](IMG/Crop.jpg)
 
-![](IMH/Reflection.jpg)
+![](IMG/Reflection.jpg)
 
