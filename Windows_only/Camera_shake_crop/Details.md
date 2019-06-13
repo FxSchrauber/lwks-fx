@@ -1,11 +1,10 @@
-﻿
 *[[Return to parent page]](../README.md)*  
 
 ## More details (Camera shake & crop & reflections)
 
-[![](img.JPG)](Details.mg)  
+![](img.JPG)
 
-### Strength: 
+### Strength: ![](Strength.img)
   - **Move**
     Details in progress  
   - **Automatic**
