@@ -4,6 +4,11 @@
 ### Filename: <a href="Rhythmic_pulsation_20180405.fx" download>Rhythmic_pulsation_20180405.fx</a> 
 [Download as zip-file](Rhythmic_pulsation_20180405.zip)
 
+#### Category: "Stylize"
+#### Subcategory (old): "Motion"
+
+--------------------------------------------------------------------------
+
 ### Effect description:  The effect creates a cyclically repeating zoom. 
 In addition to the frames per cycle, the zoom behavior within the cycles can also be set. For this purpose, the effect itself generates a curve graphic in order to be able to adjust the behavior more precisely. 
 A prerequisite for the internal effect calculations is that you correctly set the effect runtime in frames in the effect.  
