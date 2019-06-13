@@ -24,7 +24,7 @@ Horizontal and vertical shifts based on a random generator.
 
 ### Known issues and limitations:
 - **Only for Windows**  
-  Cause of incompatibility with other platforms: The used random number generator  
+-  Maybe the effect doesn't work with all GPUs?
 - **Lightworks 14.5 or better**  
 
 --------------------------------------------------------------------------
