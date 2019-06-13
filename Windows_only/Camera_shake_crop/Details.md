@@ -2,9 +2,10 @@
 
 ## More details (Camera shake & crop & reflections)
 
-![](img.JPG)
+![](img2.JPG)
 
-### Strength: ![](Strength.img)
+### Strength: 
+![](Strength.img)
   - **Move**
     Details in progress  
   - **Automatic**
