@@ -31,7 +31,7 @@
 
 ### Crop & mirror edges
 ![](IMG/Crop.jpg)  
-  -**Crop and mirror behavior:**  
+  - **Crop and mirror behavior:**  
   ![](IMG/Reflection.jpg)  
     - **Reflection on set edges acting on incoming frames**  
       Details in progress  
