@@ -8,7 +8,7 @@
 ### Strength:
 ![](IMG/Strength.jpg)
   - **Move**  
-    Details in progress  
+    Average strength of semi-random shaking movements. 
   - **Automatic**  
   ![](IMG/Automatic.jpg)  
     - **Mirrored edges (no zoom)**  
@@ -20,7 +20,9 @@
     - **Secure zoom; edges never visible**  
        Details in progress  
   - **XY Shake ratio**  
-    Details in progress
+    - 0% = Statistically identical average intensity of horizontal and vertical movements.
+    - -100% = Horizontal movements only.
+    - +100% = Vertical movements only.
 
 ---------------------------------------------
 
