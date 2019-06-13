@@ -5,7 +5,7 @@
 
 ---------------------------------------------
 
-## Strength: 
+### Strength: 
 ![](IMG/Strength.jpg)
   - **Move**  
     Details in progress  
@@ -24,12 +24,12 @@
 
 ---------------------------------------------
 
-### Speed
+#### Speed
   - Details in progress
 
 ---------------------------------------------
 
-## Crop & mirror edges
+### Crop & mirror edges
 ![](IMG/Crop.jpg)  
   -**Crop and mirror behavior:**  
   ![](IMG/Reflection.jpg)  
@@ -48,7 +48,7 @@
     
     --------------------------------------------
     
-### Random values
+#### Random values
 Generating the apparent random values to produce the shaking.  
 They are not real random values.  
 If you want to start the effect with other shaking behaviors then you can change the starting value of the keyframing (ramp). 
