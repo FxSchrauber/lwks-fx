@@ -1,5 +1,5 @@
 *[[Return to parent page]](../README.md)*  
-# This page is currently under construction !!!
+
 # Camera shake & crop & reflections
 
 ### Filename: <a href="Camera_shake_crop.fx" download>Camera_shake_crop.fx</a> 
