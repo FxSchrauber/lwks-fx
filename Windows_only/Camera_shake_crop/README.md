@@ -7,6 +7,7 @@
 
 #### Category: "Stylize"
 #### Subcategory: "Video artefacts"
+#### Status of effect development: Prototype
 
 --------------------------------------------------------------------------
 
