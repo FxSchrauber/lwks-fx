@@ -12,16 +12,18 @@
 
 ### Effect description:  Horizontal and vertical shifts based on a random generator.
 #### Features:
-- Several automatic zoom modes to avoid the visibility of the frame edges.
-- Different reflection modes of the edges to allow a low zoom at strong shifts. 
-- Cropping for adaptation to letterbox material.
-By default, the original material is reflected at the set crop edges before cropping is applied. This prevents the black edges of letterbox material from becoming visible when shaking.
+- Several automatic zoom modes to avoid the visibility of the frame edges.  
+- Different reflection modes of the edges to allow a low zoom at strong shifts.  
+- Cropping for adaptation to letterbox material.  
+  By default, the original material is reflected at the set crop edges before cropping is applied. 
+  This prevents the black edges of letterbox material from becoming visible when shaking.
 
 --------------------------------------------------------------------------
 
-### Known issues and limitations: Only for Windows 
-Cause of incompatibility with other platforms:
-
+### Known issues and limitations:
+- **Only for Windows**  
+  Cause of incompatibility with other platforms: The used random number generator
+- ** Lightworks 14.5 or better **
 --------------------------------------------------------------------------
 
 
