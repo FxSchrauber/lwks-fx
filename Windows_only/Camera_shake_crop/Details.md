@@ -36,6 +36,7 @@
 ![](IMG/Crop.jpg)  
 The main purpose of this feature is to prevent the shaking of black areas of letterbox material. This feature is useful when the visible frame dimensions differ from the actual frame dimensions.In addition, the behavior can also be changed for other purposes.   
   - **Crop and mirror behavior:**  
+  If you have set "Top & Bottom" and "Left & Right" to 0, then the behavior set here is without meaning.
   ![](IMG/Reflection.jpg)  
     - **Reflection on set edges acting on incoming frames**  
       Designed to use letterbox material or the like with visible edges.  
