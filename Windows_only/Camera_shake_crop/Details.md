@@ -44,15 +44,19 @@ The main purpose of this feature is to prevent the shaking of black areas of let
      If you temporarily change the crop color, this makes adjustment easier.  
      After this basic adjustment, you can set the "Move" slider to any value.   
     - **Reflection on the edges of the incoming frame**  
-      Details in progress  
+      Use this setting if your original material has no visible edges and you want to crop it.  
+      Because the reflections at the edges of the original frame take place in this setting, 
+      these reflections are further away from the cropped edges,
+      which minimizes the likelihood of their visibility while shaking.  
     - **NO cropping ; Reflection on the set edges**  
-      Details in progress  
+     It is reflected at the set edges. Because it is not cropped, these reflections are clearly visible.  
+     This may be used in some cases to remove borders from the original material, or when such special effects are desired.   
   - **Top & Bottom**
-    Details in progress
+    Vertical cropping
   - **Left & Right**
-     Details in progress
+     Horizontal cropping
   - **Crop color**
-    Details in progress  
+    Color and alpha of the cropped areas. 
     
 --------------------------------------------
     
