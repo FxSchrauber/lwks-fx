@@ -5,9 +5,9 @@
 ### Filename: <a href="Camera_shake_crop.fx" download>Camera_shake_crop.fx</a> 
 [Download as zip-file](Camera_shake_crop.zip)
 
-#### Category: "Stylize"
-#### Subcategory: "Video artefacts"
-#### Status of effect development: Prototype
+**Category: "Stylize"  
+Subcategory: "Video artefacts"  
+Status of effect development: Prototype**  
 
 --------------------------------------------------------------------------
 
