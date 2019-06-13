@@ -64,7 +64,7 @@ The main purpose of this feature is to prevent the shaking of black areas of let
     
 #### Random values
 This does not produce real random values.
-From this ramp, the effect creates seemingly random values to produce the shaking.
+From this ramp, the effect creates seemingly random values to produce the shaking.  
 ![](IMG/Random.jpg)  
 The values of this ramp itself are **not** the random values, but merely the basis for selecting an internal random value.
 If you want to start the effect with other shaking behaviors then you can change the starting value of the keyframing (ramp). 
