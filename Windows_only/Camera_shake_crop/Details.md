@@ -5,7 +5,7 @@
 ![](img2.JPG)
 
 ### Strength: 
-![](Strength.img)
+![](Strength.jpg)
   - **Move**
     Details in progress  
   - **Automatic**
