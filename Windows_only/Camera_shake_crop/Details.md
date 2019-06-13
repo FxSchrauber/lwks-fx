@@ -50,7 +50,8 @@ The main purpose of this feature is to prevent the shaking of black areas of let
       these reflections are further away from the cropped edges,
       which minimizes the likelihood of their visibility while shaking.  
     - **NO cropping ; Reflection on the set edges**  
-     It is reflected at the set edges. Because it is not cropped, these reflections are clearly visible.  
+     Reflection takes place at the set edges, acting on the incoming original frame.  
+     Because it is not cropped, these reflections are clearly visible.  
      This may be used in some cases to remove borders from the original material, or when such special effects are desired.   
   - **Top & Bottom**
     Vertical cropping
