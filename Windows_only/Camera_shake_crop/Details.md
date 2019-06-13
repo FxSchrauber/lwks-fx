@@ -1,7 +1,7 @@
 *[[Return to parent page]](../README.md)*  
 
 ## More details (Camera shake & crop & reflections)
-![](IMG/img2.JPG)  
+![](IMG/img2.img)  
 
 ---------------------------------------------
 
