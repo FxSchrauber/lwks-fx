@@ -49,7 +49,8 @@
 --------------------------------------------
     
 #### Random values
-Generating the apparent random values to produce the shaking.  
 They are not real random values.  
+![](Random.jpg)  
+From this ramp, the effect creates seemingly random values to produce the shaking.
 If you want to start the effect with other shaking behaviors then you can change the starting value of the keyframing (ramp). 
 Note that the angle of the ramp also affects the speed. If you just want to change the speed then use the "Speed" slider.
