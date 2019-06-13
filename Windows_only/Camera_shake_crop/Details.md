@@ -28,11 +28,12 @@
 ---------------------------------------------
 
 #### Speed
-  - Details in progress
+  - Average shaking frequency.
 
 ---------------------------------------------
 
 ### Crop & mirror edges
+The main purpose of this feature is to prevent the shaking of black areas of letterbox material. This feature is useful when the visible frame dimensions differ from the actual frame dimensions.  
 ![](IMG/Crop.jpg)  
   - **Crop and mirror behavior:**  
   ![](IMG/Reflection.jpg)  
