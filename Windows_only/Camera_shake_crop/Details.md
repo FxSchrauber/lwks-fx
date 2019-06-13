@@ -10,15 +10,16 @@
   - **Move**  
     Average strength of semi-random shaking movements. 
   - **Automatic**  
+  Self-adjusting zoom, depending on the "Move" setting and automatic mode.
   ![](IMG/Automatic.jpg)  
     - **Mirrored edges (no zoom)**  
-      Details in progress  
+      The edges are reflected to avoid trembling black edges. 
     - **Zoom; mirrored edges visible**  
-      Details in progress  
+      Self-adjusting low zoom to minimize reflections at the edges.
     - **Zoom; mirrored edges maybe visible**  
-      Details in progress  
+      Self-adjusting zoom to largely avoid reflections at the edges.
     - **Secure zoom; edges never visible**  
-       Details in progress  
+       Self-adjusting zoom, which can be strong depending on the "Move" setting.  
   - **XY Shake ratio**  
     - 0% = Statistically identical average intensity of horizontal and vertical movements.
     - -100% = Horizontal movements only.
