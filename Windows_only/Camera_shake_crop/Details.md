@@ -10,7 +10,7 @@
   - **Move**  
     Average strength of semi-random shaking movements. 
   - **Automatic**  
-  Self-adjusting zoom, depending on the "Move" setting and automatic mode.
+  Self-adjusting zoom, depending on the "Move" setting and automatic mode.  
   ![](IMG/Automatic.jpg)  
     - **Mirrored edges (no zoom)**  
       The edges are reflected to avoid trembling black edges. 
