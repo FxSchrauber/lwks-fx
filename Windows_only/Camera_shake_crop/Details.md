@@ -33,12 +33,16 @@
 ---------------------------------------------
 
 ### Crop & mirror edges
-The main purpose of this feature is to prevent the shaking of black areas of letterbox material. This feature is useful when the visible frame dimensions differ from the actual frame dimensions.  
 ![](IMG/Crop.jpg)  
+The main purpose of this feature is to prevent the shaking of black areas of letterbox material. This feature is useful when the visible frame dimensions differ from the actual frame dimensions.In addition, the behavior can also be changed for other purposes.   
   - **Crop and mirror behavior:**  
   ![](IMG/Reflection.jpg)  
     - **Reflection on set edges acting on incoming frames**  
-      Details in progress  
+      Designed to use letterbox material or the like with visible edges.  
+      Please first set "Move" to 0% to see the incoming original frame.  
+     Then set "Top & Bottom" or "Left & Right" so that this cropping completely covers the original edges. 
+     If you temporarily change the crop color, this makes adjustment easier.  
+     After this basic adjustment, you can set the "Move" slider to any value.   
     - **Reflection on the edges of the incoming frame**  
       Details in progress  
     - **NO cropping ; Reflection on the set edges**  
