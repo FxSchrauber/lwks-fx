@@ -25,6 +25,5 @@ Horizontal and vertical shifts based on a random generator.
 - Cropping for adaptation to letterbox material.  
   By default, the original material is reflected at the set crop edges before cropping is applied. 
   This prevents the black edges of letterbox material from becoming visible when shaking.  
-  [![](img.JPG)](Details.md)  
+  [![](img.jpg)](Details.md)  
   ### [More details](Details.md) 
-
