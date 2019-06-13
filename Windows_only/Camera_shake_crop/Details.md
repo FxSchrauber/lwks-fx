@@ -9,7 +9,7 @@
 ![](IMG/Strength.jpg)
   - **Move**
     Details in progress  
-  - **Automatic**
+  - **Automatic**  
   ![](IMG/Automatic.jpg)
     - **Mirrored edges (no zoom)**  
       Details in progress
