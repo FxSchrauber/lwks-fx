@@ -9,6 +9,11 @@
 Subcategory: "Video artefacts"  
 Status of effect development: Prototype**  
 
+### Known issues and limitations:
+- **Only for Windows**  
+-  Maybe the effect doesn't work with all GPUs?
+- **Lightworks 14.5 or better**  
+
 --------------------------------------------------------------------------
 
 ### Effect description:
@@ -20,13 +25,13 @@ Horizontal and vertical shifts based on a random generator.
 - Cropping for adaptation to letterbox material.  
   By default, the original material is reflected at the set crop edges before cropping is applied. 
   This prevents the black edges of letterbox material from becoming visible when shaking.
+  ![](img.jpg)
+  
+  
 
 --------------------------------------------------------------------------
 
-### Known issues and limitations:
-- **Only for Windows**  
--  Maybe the effect doesn't work with all GPUs?
-- **Lightworks 14.5 or better**  
+
 
 --------------------------------------------------------------------------
 
