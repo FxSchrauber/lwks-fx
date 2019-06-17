@@ -15,6 +15,7 @@ Status of effect development: Prototype,**
 --------------------------------------------------------------------------
 
 ### Effect description: This page is currently under construction
+![](IMG/image1b.jpg)
   
 
 #### Features:This page is currently under construction
