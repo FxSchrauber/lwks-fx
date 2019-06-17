@@ -23,3 +23,4 @@ Status of effect development: Prototype,**
 
   ### [More details](Details.md) 
 
+![](IMG/img2.jpg)
