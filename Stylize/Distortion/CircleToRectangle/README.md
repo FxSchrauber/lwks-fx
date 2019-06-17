@@ -14,13 +14,14 @@ Status of effect development: Prototype,**
 
 --------------------------------------------------------------------------
 
-### Effect description: This page is currently under construction
-[![](IMG/img1b.jpg)](IMG/img1.jpg)
-  
+### Effect description:
+[![](IMG/img1b.jpg)](IMG/img1.jpg)  
+This simple effect stretches the texture up and down. The strength of this stretching increases with the distance from the center.
+This effect was developed for material where the circle is already cropped up and down (perhaps from the smartphone camera or another effect). 
+If not cropped then the corners, as well as the top and bottom edges remain rounded.
 
-#### Features:This page is currently under construction
+To adjust the export aspect ratio, the entire texture can be stretched horizontally, or mirrors can be moved.  
 
-
-  ### [More details](Details.md) 
+If black edges are to remain on the sides, then horizontal cropping could be useful to create absolutely straight edges. If this is desired, this could be easily programmed. At the moment you would need a separate effect for cropping.
 
 ![](IMG/img2.jpg)
