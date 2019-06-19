@@ -17,8 +17,20 @@ Status of effect development: Prototype,**
 
 --------------------------------------------------------------------------
 
-### Effect description: Currently under construction
+### Effect description:
 The `Rounds` slider lets the minimized foreground texture circle around the set `Effect center` (only 2D).  
-`Spin` enables a self-rotation of the foreground.
-
+`Spin` enables a self-rotation of the foreground.  
 ![](IMG/img1.jpg)
+
+
+------------------------------------------------------------------------
+
+### Effect development, suggestions for improvement (not yet implemented):
+- Add a selection box to pin the frame at it’s center or one of it’s corners to the circle.
+- Crop: In case of asymmetrical cropping a re-centering of the spin is required.
+- Aspect Ratio of Orbit: 
+  - Symmetric Slider Scaling  
+  - Maybe rotatable aspect ratio?  
+- Interference filter option at minimization (scaling-dependent pre-blurring).  
+- Edges of the foreground texture: Ideas for code optimizations see the comments in the effect code itself.  
+- Maybe add a 3D orbit?
