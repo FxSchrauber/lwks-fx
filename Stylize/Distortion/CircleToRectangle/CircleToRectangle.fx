@@ -18,7 +18,7 @@ int _LwksEffectInfo
    string Description = "From circle to rectangle";  
    string Category    = "Stylize";
    string SubCategory = "Distortion";
-   string Notes       = "Prototype 20190617";
+   string Notes       = "Prototype 20190617, see: https://fxschrauber.github.io/lwks-fx/";
 > = 0;
 
 
