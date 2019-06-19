@@ -7,7 +7,8 @@
 
 **Category: "DVE"  
 Subcategory: "DVE Extras"  
-Status of effect development: Second prototype** of 17 Dec 2018, minor code changes on 19 June 2019  
+Status of effect development: Second prototype** of 17 Dec 2018,  
+  (minor code changes on 19 June 2019)  
 
 ### Known issues and limitations:
 - With negative zoom (minimization),the default setting Orbit Radius refers to the outer edges of the foreground. 
@@ -19,7 +20,8 @@ Status of effect development: Second prototype** of 17 Dec 2018, minor code chan
 --------------------------------------------------------------------------
 
 ### Effect description:
-The `Rounds` slider lets the minimized foreground texture circle around the set `Effect center` (only 2D).  
+The `Rounds` slider lets the minimized foreground texture circle around the set `Effect center`.  
+(only 2D)  
 `Spin` enables a self-rotation of the foreground.  
 ![](IMG/img1.jpg)  
 <a href="https://www.lwks.com/index.php?option=com_kunena&func=view&catid=6&id=190102&limit=15&limitstart=15&Itemid=81#190202"  target="blank">Tests with this effect and previous prototypes.</a>  
