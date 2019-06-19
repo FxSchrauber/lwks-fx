@@ -41,6 +41,7 @@ int _LwksEffectInfo
    string Description = "Rhythmic pulsation";        // The title
    string Category    = "Stylize";
    string SubCategory = "Motion";
+   string Notes       = "Prototype , see: https://fxschrauber.github.io/lwks-fx/";
 > = 0;
 
 
