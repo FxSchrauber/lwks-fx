@@ -14,7 +14,6 @@ Status of effect development: Second prototype**
   This ensures that zooming in does not affect the visibility of the foreground object. 
   The side effect is that at 0% zoom, no position change takes place.  
 - Crop: In case of asymmetrical cropping, the spin center is not centered correctly.  
-<a href="https://www.lwks.com/index.php?option=com_kunena&func=view&catid=6&id=190102&limit=15&limitstart=15&Itemid=81#190202"  target="blank">Tests with this effect and previous prototypes.</a>  
 
 
 --------------------------------------------------------------------------
@@ -22,8 +21,8 @@ Status of effect development: Second prototype**
 ### Effect description:
 The `Rounds` slider lets the minimized foreground texture circle around the set `Effect center` (only 2D).  
 `Spin` enables a self-rotation of the foreground.  
-![](IMG/img1.jpg)
-
+![](IMG/img1.jpg)  
+<a href="https://www.lwks.com/index.php?option=com_kunena&func=view&catid=6&id=190102&limit=15&limitstart=15&Itemid=81#190202"  target="blank">Tests with this effect and previous prototypes.</a>  
 
 ------------------------------------------------------------------------
 
