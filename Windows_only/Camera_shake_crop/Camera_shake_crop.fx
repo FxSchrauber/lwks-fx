@@ -27,7 +27,7 @@ int _LwksEffectInfo
    string Description = "Camera shake & crop & reflections";
    string Category    = "Stylize";
    string SubCategory = "Video artefacts";
-   string Notes       = "Prototype, Windows only, >= Lightworks 14.5";
+   string Notes       = "Prototype, Windows only,  >= Lightworks 14.5 , see: https://fxschrauber.github.io/lwks-fx/ ";
 > = 0;
 
 
