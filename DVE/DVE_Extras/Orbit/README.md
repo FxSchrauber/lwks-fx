@@ -27,7 +27,9 @@ The `Rounds` slider lets the minimized foreground texture circle around the set 
 
 ### Effect development, suggestions for improvement (not yet implemented):
 - Add a selection box to pin the frame at it’s center or one of it’s corners to the circle.
-- Crop: In case of asymmetrical cropping a re-centering of the spin is required.
+- Crop: In case of asymmetrical cropping a re-centering of the spin is required. 
+        Perhaps it makes more sense to remove the Crop feature, 
+        so that the user can connect an additional effect to the input according to the requirements?
 - Aspect Ratio of Orbit: 
   - Symmetric Slider Scaling  
   - Maybe rotatable aspect ratio?  
