@@ -10,12 +10,10 @@ Subcategory: "DVE Extras"
 Status of effect development: Prototype,**  
 <a href="https://www.lwks.com/index.php?option=com_kunena&func=view&catid=6&id=190102&limit=15&limitstart=15&Itemid=81#190202"  target="blank">See the previous tests of this effect under a different effect name</a> 
 
-
-
 --------------------------------------------------------------------------
 
 ### Effect description: Currently under construction
-[![](IMG/img1b.jpg)](IMG/img1.jpg)  
+The `Rounds` slider lets the minimized foreground texture circle around the set `Effect center`.  
+`Spin` enables a self-rotation of the foreground.
 
-
-![](IMG/img2.jpg)
+![](IMG/img1.jpg)
