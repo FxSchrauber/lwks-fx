@@ -2,14 +2,14 @@
 
 # Orbit
 
-### Filename: <a href="Orbit.fx" download>Orbit.fx</a> 
+### *Filename:* <a href="Orbit.fx" download>Orbit.fx</a> 
 [Download as zip-file](Orbit.zip)
 
-Category: **DVE**  
-Subcategory: **DVE Extras**  
-Status: **Second prototype** of 17 Dec 2018, (minor code changes on 19 June 2019)  
+*Category:* **DVE**  
+*Subcategory:* **DVE Extras**  
+*Status:* **Second prototype** of 17 Dec 2018, (minor code changes on 19 June 2019)  
 
-### Known issues and limitations:
+### *Known issues and limitations:*
 - With negative zoom (minimization),the default setting Orbit Radius refers to the outer edges of the foreground. 
   This ensures that zooming in does not affect the visibility of the foreground object. 
   The side effect is that at 0% zoom, no position change takes place.  
@@ -18,7 +18,7 @@ Status: **Second prototype** of 17 Dec 2018, (minor code changes on 19 June 2019
 
 --------------------------------------------------------------------------
 
-### Effect description:
+### *Effect description:*
 The `Rounds` slider lets the minimized foreground texture circle around the set `Effect center`.  
 (only 2D)  
 `Spin` enables a self-rotation of the foreground.  
@@ -27,7 +27,7 @@ The `Rounds` slider lets the minimized foreground texture circle around the set 
 
 ------------------------------------------------------------------------
 
-### Effect development, suggestions for improvement (not yet implemented):
+### *Effect development, suggestions for improvement (not yet implemented):*
 - Add a selection box to pin the frame at it’s center or one of it’s corners to the circle.
 - Crop: In case of asymmetrical cropping a re-centering of the spin is required. 
         Perhaps it makes more sense to remove the Crop feature, 
