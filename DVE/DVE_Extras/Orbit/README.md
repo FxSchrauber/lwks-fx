@@ -5,9 +5,9 @@
 ### Filename: <a href="Orbit.fx" download>Orbit.fx</a> 
 [Download as zip-file](Orbit.zip)
 
-**Category: "DVE"  
-Subcategory: "DVE Extras"  
-Status: Second prototype** of 17 Dec 2018, (minor code changes on 19 June 2019)  
+Category: **DVE**  
+Subcategory: **DVE Extras**  
+Status: **Second prototype** of 17 Dec 2018, (minor code changes on 19 June 2019)  
 
 ### Known issues and limitations:
 - With negative zoom (minimization),the default setting Orbit Radius refers to the outer edges of the foreground. 
