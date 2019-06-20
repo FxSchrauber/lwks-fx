@@ -16,7 +16,7 @@
 
 ### Effect description:
 [![](IMG/img1b.jpg)](IMG/img1.jpg)  
-This simple effect stretches the texture in the upper and lower areas. The strength of this stretching increases with the vertical distance from the center. This center can be moved vertically with `Pos-Distortion`.
+This simple effect stretches the texture in the upper and lower areas. The strength of this stretching increases with the vertical distance from the center. This center can be moved vertically with `Pos-Distortion`.  
 This effect was developed for material where the circle is already cropped up and down (perhaps from the smartphone camera or another effect). 
 If not cropped then the corners, as well as the top and bottom edges remain rounded.
 
