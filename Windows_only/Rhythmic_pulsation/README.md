@@ -4,9 +4,9 @@
 ### Filename: <a href="Rhythmic_pulsation_20180405.fx" download>Rhythmic_pulsation_20180405.fx</a> 
 [Download as zip-file](Rhythmic_pulsation_20180405.zip)
 
-**Category: "Stylize"  
-Subcategory (old): "Motion"  
-Status of effect development: Outdated version**
+Category: **Stylize**  
+Subcategory (old): **Motion**  
+Status: **Outdated version**
 
 --------------------------------------------------------------------------
 
