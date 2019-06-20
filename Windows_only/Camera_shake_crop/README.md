@@ -8,10 +8,12 @@
 Category: **Stylize**  
 Subcategory: **Video artefacts**  
 Status: **Prototype** ,  June 2019  
+
 Known issues and limitations:
-- **Only for Windows**  
--  Maybe the effect doesn't work with all GPUs?
-- **Lightworks 14.5 or better**  
+ - **Only for Windows**  
+ -  Maybe the effect doesn't work with all GPUs?
+ - **Lightworks 14.5 or better**  
+
 
 --------------------------------------------------------------------------
 
