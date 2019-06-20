@@ -5,9 +5,9 @@
 ### Filename: <a href="CircleToRectangle.fx" download>CircleToRectangle.fx</a> 
 [Download as zip-file](CircleToRectangle.zip)
 
-Category: **Stylize**  
-Subcategory: **Distortion**  
-Status: **Prototype**  
+*Category:* **Stylize**  
+*Subcategory:* **Distortion**  
+*Status:* **Prototype** , June 2019  
 <a href="https://www.lwks.com/index.php?option=com_kunena&func=view&catid=6&id=199747&limit=15&limitstart=15&Itemid=81#199837"  target="blank">See the previous tests of this effect under a different effect name</a> 
 
 
