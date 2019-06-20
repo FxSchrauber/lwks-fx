@@ -14,8 +14,6 @@ Some of these effects have limited compatibility, others are prototypes whose fu
 Maybe some of the effects meet your requirements.  If not, you are welcome to develop the code further.
 
 - [DVE / DVE Extras / **Orbit**](DVE/DVE_Extras/Orbit/README.md)
-
 - [Stylize / Distortion / **From circle to rectangle**](Stylize/Distortion/CircleToRectangle/README.md)
-
 - [**Windows only**](Windows_only/README.md)
 
