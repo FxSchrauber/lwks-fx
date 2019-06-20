@@ -8,7 +8,6 @@ Category: **Stylize**
 Subcategory (old): **Motion**  
 Status: **Outdated version**  
 Known issues and limitations: **Only for Windows**  
-  (Cause of incompatibility with other platforms: unknown)
 
 --------------------------------------------------------------------------
 
