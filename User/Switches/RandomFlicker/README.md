@@ -18,8 +18,8 @@ In the standard setting, very short hold times on the second input (often only o
   
 `Time ratio`(adjustable asymmetry):  
 0%: Track V1 and V2 (Input 1 and 2) will be used 50% of the time (statistically)  
-- 100%: Almost only input 2  
-+ 100%: Almost only input 1  
+-100%: Almost only input 2  
++100%: Almost only input 1  
   
 At 0% is the most switched.  
 At near + -100% only rarely.  
