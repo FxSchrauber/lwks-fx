@@ -300,7 +300,7 @@ float4 ps_oa( float2 xy0 : TEXCOORD0, float2 xy1 : TEXCOORD1, float2 xy2 : TEXCO
 {  
    float4 fg    = tex2D( FgSampler, xy1 );
    float4 bg    = tex2D( BgSampler, xy2 );
-   float4 matte = tex2D( s_Matte  , xy2 );
+   float4 matte = tex2D( s_Matte  , xy0 );
    float4 mask  = fg; 
 
    fg = fn_setFgLift (fg, FgLift);
