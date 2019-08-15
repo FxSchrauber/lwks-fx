@@ -1,5 +1,5 @@
 // @Maintainer hugly
-// @Released 2019-08-12
+// @Released 2019-08-15
 // @Author hugly, schrauber
 // @Created 2019-08-09
 // @see
@@ -29,11 +29,24 @@ int _LwksEffectInfo
 > = 0;
 
 //--------------------------------------------------------------//
-// Globals
+// Globals Definitions and declarations
 //--------------------------------------------------------------//
 
-#define PI  3.141592654
+
 float _OutputAspectRatio;
+float _Progress;
+
+#define PI       3.141592654
+#define PI_2     6.283185
+
+#define INVSQRT3 0.57735
+
+#define R_WEIGHT 0.2989
+#define G_WEIGHT 0.5866
+#define B_WEIGHT 0.1145
+
+
+
 
 //--------------------------------------------------------------//
 // Parameters
@@ -62,10 +75,10 @@ int SelectBg
    string Description = "Select Bg";
    string Enum = "Bg Input,"
                  "50% Diamond Pattern,"
-				 "90% Luminance,"
-				 "10% Luminance,"
+                 "90% Luminance,"
+                 "10% Luminance,"
                  "Alpha Channel,"
-				 "FractalMatte";
+                 "FractalMatte";
 > = 0;
 
 /** bool EnableBgPattern
@@ -74,21 +87,128 @@ int SelectBg
 > = false;
 */
 
+
+/*
+float Opacity
+<
+   string Description = "Opacity";   
+   string Group = "Matte"; 
+   float MinVal = 0.0;
+   float MaxVal = 1.0;
+> = 1.0;
+*/
+
+float FracOffs
+<
+   string Description = "Fractal offset";   
+   string Group = "Matte"; 
+   float MinVal = 0.00;
+   float MaxVal = 1.00;
+> = 0.0;
+
+float FracRate
+<
+   string Description = "Fractal rate";   
+   string Group = "Matte"; 
+   float MinVal = 0.00;
+   float MaxVal = 1.00;
+> = 0.5;
+
+float4 Colour
+<
+   string Description = "Mix colour";
+   string Group = "Matte"; 
+   bool SupportsAlpha = true;
+> = { 1.0, 0.77, 0.19, 1.0 };
+
+float ColourMix
+<
+   string Description = "Mix level";
+   string Group = "Matte"; 
+   float MinVal = 0.0;
+   float MaxVal = 1.0;
+> = 0.0;
+
+float HueParam
+<
+   string Description = "Hue";
+   string Group = "Matte"; 
+   float MinVal = -1.0;
+   float MaxVal = 1.0;
+> = 0.0;
+
+float SatParam
+<
+   string Description = "Saturation";
+   string Group = "Matte"; 
+   float MinVal = -1.0;
+   float MaxVal = 1.0;
+> = 0.0;
+
+
+
+/*
+float Gain
+<
+   string Description = "Gain";
+   string Group = "Matte"; 
+   float MinVal = 0.00;
+   float MaxVal = 4.00;
+> = 1.0;
+
+float Gamma
+<
+   string Description = "Gamma";
+   string Group = "Matte"; 
+   float MinVal = 0.0;
+   float MaxVal = 4.00;
+> = 1.00;
+
+float Brightness
+<
+   string Description = "Brightness";
+   string Group = "Matte"; 
+   float MinVal = -1.00;
+   float MaxVal = 1.00;
+> = 0.0;
+
+float Contrast
+<
+   string Description = "Contrast";
+   string Group = "Matte"; 
+   float MinVal = 0.00;
+   float MaxVal = 4.00;
+> = 1.0;
+
+*/
+
 //--------------------------------------------------------------//
 // Inputs
 //--------------------------------------------------------------//
 
 texture fg;
 texture bg;
+texture Fractal : RenderColorTarget;
+texture Matte   : RenderColorTarget;
+
+
+//--------------------------------------------------------------//
+// Samplers
+//--------------------------------------------------------------//
 
 sampler FgSampler   = sampler_state { Texture = <fg>; };
 sampler BgSampler   = sampler_state { Texture = <bg>; };
+sampler s_Fractal   = sampler_state { Texture = <Fractal>; };
+sampler s_Matte     = sampler_state { Texture = <Matte>; };
+
+
+
 
 //--------------------------------------------------------------//
-// Code
+// Functions called by shaders 
 //--------------------------------------------------------------//
 
-float4 setFgLift (float4 x, float lift)
+float4 fn_setFgLift (float4 x, float lift)
 {  lift *= 0.55;
    float3 gamma1 = 1.0 - pow ( 1.0 - x.rgb, 1.0 / max ((1.0 - lift), 1E-6));
    float3 gamma2 =       pow ( x.rgb , 1.0      / max (lift + 1.0, 1E-6));
@@ -106,156 +226,11 @@ float3 fn_diamondPattern (float2 uv, float3 color1, float3 color2, float numberH
    return (lerp (color1, color2, lerp( mix.y , 1.0 - mix.y, mix.x)));
 }
 
-float4 oa_main( float2 xy0 : TEXCOORD0, float2 xy1 : TEXCOORD1, float2 xy2 : TEXCOORD2 ) : COLOR 
-{  
-   float4 fg = tex2D( FgSampler, xy1 );
-   float4 bg = tex2D( BgSampler, xy2 );
-   float4 mask = fg; 
-
-   fg = setFgLift (fg, FgLift);
-   float alpha = mask.a * min ((( mask.r + mask.g + mask.b ) / 3.0) * MaskGain, 1.0);		
-
-   if (SelectBg == 1) bg = float4 (fn_diamondPattern (xy0, 0.4, 0.6, 120, 1000.0), 1.0);
-   if (SelectBg == 2) bg = float4 (0.90.xxx, 1.0);
-   if (SelectBg == 3) bg = float4 (0.10.xxx, 1.0);
-
-   float4 ret = lerp( bg, fg, alpha * FgOpacity);
-
-   if (SelectBg == 4)
-      ret = float4 (fg.rgb, alpha * FgOpacity);
-   else
-		ret.a = 1.0;
-   return ret;
-}
-
-
-//-----------------------------------------------------------------------------------------//
-// FractalMatte Start
-//-----------------------------------------------------------------------------------------//
-//-----------------------------------------------------------------------------------------//
-// Inputs
-//-----------------------------------------------------------------------------------------//
-
-// texture Fg; /**change**/
-
-texture Matte : RenderColorTarget;
-
-//-----------------------------------------------------------------------------------------//
-// Samplers 
-//-----------------------------------------------------------------------------------------//
-
-// sampler s_Input = sampler_state { Texture = <Fg>; }; /**change**/
-sampler s_Input = sampler_state { Texture = <fg>; };
-sampler s_Matte = sampler_state { Texture = <Matte>; };
-
-//-----------------------------------------------------------------------------------------//
-// Parameters
-//-----------------------------------------------------------------------------------------//
-
-float Opacity
-<
-   string Description = "Opacity";   
-   string Group = "Matte"; /**change**/
-   float MinVal = 0.0;
-   float MaxVal = 1.0;
-> = 1.0;
-
-float FracOffs
-<
-   string Description = "Fractal offset";   
-   string Group = "Matte"; /**change**/
-   float MinVal = 0.00;
-   float MaxVal = 1.00;
-> = 0.0;
-
-float FracRate
-<
-   string Description = "Fractal rate";   
-   string Group = "Matte"; /**change**/
-   float MinVal = 0.00;
-   float MaxVal = 1.00;
-> = 0.5;
-
-float4 Colour
-<
-   string Description = "Mix colour";
-   string Group = "Matte"; /**change**/
-   bool SupportsAlpha = true;
-> = { 1.0, 0.77, 0.19, 1.0 };
-
-float ColourMix
-<
-   string Description = "Mix level";
-   string Group = "Matte"; /**change**/
-   float MinVal = 0.0;
-   float MaxVal = 1.0;
-> = 0.0;
-
-float HueParam
-<
-   string Description = "Hue";
-   string Group = "Matte"; /**change**/
-   float MinVal = -1.0;
-   float MaxVal = 1.0;
-> = 0.0;
-
-float SatParam
-<
-   string Description = "Saturation";
-   string Group = "Matte"; /**change**/
-   float MinVal = -1.0;
-   float MaxVal = 1.0;
-> = 0.0;
-
-float Gain
-<
-   string Description = "Gain";
-   string Group = "Matte"; /**change**/
-   float MinVal = 0.00;
-   float MaxVal = 4.00;
-> = 1.0;
-
-float Gamma
-<
-   string Description = "Gamma";
-   string Group = "Matte"; /**change**/
-   float MinVal = 0.0;
-   float MaxVal = 4.00;
-> = 1.00;
-
-float Brightness
-<
-   string Description = "Brightness";
-   string Group = "Matte"; /**change**/
-   float MinVal = -1.00;
-   float MaxVal = 1.00;
-> = 0.0;
-
-float Contrast
-<
-   string Description = "Contrast";
-   string Group = "Matte"; /**change**/
-   float MinVal = 0.00;
-   float MaxVal = 4.00;
-> = 1.0;
-
-//-----------------------------------------------------------------------------------------//
-// Definitions and declarations
-//-----------------------------------------------------------------------------------------//
-
-#define PI_2     6.283185
-
-#define INVSQRT3 0.57735
-
-#define R_WEIGHT 0.2989
-#define G_WEIGHT 0.5866
-#define B_WEIGHT 0.1145
-
-float _Progress;
 
 //-----------------------------------------------------------------------------------------//
 // Shaders
 //-----------------------------------------------------------------------------------------//
+
 
 float4 ps_fractal (float2 xy : TEXCOORD) : COLOR
 {
@@ -272,10 +247,13 @@ float4 ps_fractal (float2 xy : TEXCOORD) : COLOR
    return retval;
 }
 
-float4 ps_FractalMatte (float2 uv : TEXCOORD, float2 xy : TEXCOORD1) : COLOR /**change**/
+
+
+
+float4 ps_FractalMatte (float2 uv : TEXCOORD, float2 xy : TEXCOORD1) : COLOR 
 {
-   float4 Fgd    = tex2D (s_Input, xy);
-   float4 retval = tex2D (s_Matte, uv);
+   //float4 Fgd    = tex2D (s_Input, xy);
+   float4 retval = tex2D (s_Fractal, uv);
 
    float luma   = dot (retval.rgb, float3 (R_WEIGHT, G_WEIGHT, B_WEIGHT));
    float buffer = dot (Colour.rgb, float3 (R_WEIGHT, G_WEIGHT, B_WEIGHT));
@@ -290,7 +268,7 @@ float4 ps_FractalMatte (float2 uv : TEXCOORD, float2 xy : TEXCOORD1) : COLOR /**
 
    float RminusG = retval.r - retval.g;
    float RminusB = retval.r - retval.b;
-   float GammVal = (Gamma > 1.0) ? Gamma : Gamma * 0.9 + 0.1;
+   // float GammVal = (Gamma > 1.0) ? Gamma : Gamma * 0.9 + 0.1;
    float Hue_Val = acos ((RminusG + RminusB) / (2.0 * sqrt (RminusG * RminusG + RminusB * (retval.g - retval.b)))) / PI_2;
    float Sat_Val = 1.0 - min (min (retval.r, retval.g), retval.b) / luma;
 
@@ -308,30 +286,61 @@ float4 ps_FractalMatte (float2 uv : TEXCOORD, float2 xy : TEXCOORD1) : COLOR /**
    temp.z = 3.0 * luma - temp.y - temp.x;
 
    retval = (Hrange < 1.0) ? temp.zyxw : (Hrange < 2.0) ? temp.xzyw : temp.yxzw;
-   temp   = (((pow (retval, 1.0 / GammVal) * Gain) + Brightness.xxxx - 0.5.xxxx) * Contrast) + 0.5.xxxx;
-   retval = lerp (Fgd, temp, Opacity);
+   // temp   = (((pow (retval, 1.0 / GammVal) * Gain) + Brightness.xxxx - 0.5.xxxx) * Contrast) + 0.5.xxxx;
+   // retval = lerp (Fgd, temp, Opacity);
 
-   retval.a = Fgd.a;
+   retval.a = 1.0;
 
    return retval;
 }
-//-----------------------------------------------------------------------------------------//
-// Fractal Matte END
-//-----------------------------------------------------------------------------------------//
+
+
+
+float4 ps_oa( float2 xy0 : TEXCOORD0, float2 xy1 : TEXCOORD1, float2 xy2 : TEXCOORD2 ) : COLOR 
+{  
+   float4 fg    = tex2D( FgSampler, xy1 );
+   float4 bg    = tex2D( BgSampler, xy2 );
+   float4 matte = tex2D( s_Matte  , xy2 );
+   float4 mask  = fg; 
+
+   fg = fn_setFgLift (fg, FgLift);
+   float alpha = mask.a * min ((( mask.r + mask.g + mask.b ) / 3.0) * MaskGain, 1.0);		
+
+   if (SelectBg == 1) bg = float4 (fn_diamondPattern (xy0, 0.4, 0.6, 120, 1000.0), 1.0);
+   if (SelectBg == 2) bg = float4 (0.90.xxx, 1.0);
+   if (SelectBg == 3) bg = float4 (0.10.xxx, 1.0);
+   if (SelectBg == 5) bg = matte;
+  
+
+   float4 ret = lerp( bg, fg, alpha * FgOpacity);
+
+   if (SelectBg == 4)
+      ret = float4 (fg.rgb, alpha * FgOpacity);
+   else
+		ret.a = 1.0;
+   return ret;
+}
+
+
+
 
 //-----------------------------------------------------------------------------------------//
 // Techniques
 //-----------------------------------------------------------------------------------------//
-technique ps { pass SinglePass { PixelShader = compile PROFILE oa_main(); } }
-technique FractalMatte3
-{
-   pass P_1
-   < string Script = "RenderColorTarget0 = Matte;"; >
-   { PixelShader = compile PROFILE ps_fractal (); }
 
-   pass P_2
-   { PixelShader = compile PROFILE ps_FractalMatte (); } /**change**/
+
+technique test01
+{
+   pass P_1  < string Script = "RenderColorTarget0 = Fractal;"; > { PixelShader = compile PROFILE ps_fractal (); }
+   pass P_2  < string Script = "RenderColorTarget0 = Matte;"  ; > { PixelShader = compile PROFILE ps_FractalMatte (); }
+   pass P_3                                                       { PixelShader = compile PROFILE ps_oa(); } 
 }
 
 
-Edit: I missed to mark the 
+
+
+
+
+
+
+ 
