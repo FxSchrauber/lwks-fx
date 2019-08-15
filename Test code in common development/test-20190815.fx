@@ -250,7 +250,7 @@ float4 ps_fractal (float2 xy : TEXCOORD) : COLOR
 
 
 
-float4 ps_FractalMatte (float2 uv : TEXCOORD, float2 xy : TEXCOORD1) : COLOR 
+float4 ps_FractalMatte (float2 uv : TEXCOORD) : COLOR 
 {
    //float4 Fgd    = tex2D (s_Input, xy);
    float4 retval = tex2D (s_Fractal, uv);
