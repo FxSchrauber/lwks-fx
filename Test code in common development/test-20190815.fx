@@ -229,32 +229,19 @@ float3 fn_diamondPattern (float2 uv, float3 color1, float3 color2, float numberH
 // Shaders
 //-----------------------------------------------------------------------------------------//
 
-float4 ps_fractal1 (float2 xy : TEXCOORD) : COLOR
+float4 ps_fractal (float2 xy : TEXCOORD, uniform float loops ) : COLOR
 {  
    float speed = 0.25 * ((cos(_Length/Pulse  * _Progress) + 1) /2);
 
    float4 retval = 1.0.xxxx;
    float3 f = float3 (xy, FracOffs);
-   for (int i = 0; i < 75; i++) {
+   for (int i = 0; i < loops; i++) {
       f.xzy = float3 (1.3, 0.999, 0.7) * (abs ((abs (f) / dot (f, f) - float3 (1.0, 1.0, speed))));
    }
    retval.rgb = f;
    return retval;
 }
 
-
-float4 ps_fractal2 (float2 xy : TEXCOORD) : COLOR
-{  
-   float speed = 0.25 * ((cos(_Length/Pulse  * _Progress) + 1) /2);
-
-   float4 retval = 1.0.xxxx;
-   float3 f = float3 (xy, FracOffs);
-   for (int i = 0; i < 30; i++) {
-      f.xzy = float3 (1.3, 0.999, 0.7) * (abs ((abs (f) / dot (f, f) - float3 (1.0, 1.0, speed))));
-   }
-   retval.rgb = f;
-   return retval;
-}
 
 float4 ps_FractalMatte (float2 uv : TEXCOORD) : COLOR 
 {
@@ -350,14 +337,14 @@ technique tech_AlphaChannel
 
 technique tech_FractalMatte1
 {
-   pass P_1  < string Script = "RenderColorTarget0 = Fractal;"; > { PixelShader = compile PROFILE ps_fractal1 (); }
+   pass P_1  < string Script = "RenderColorTarget0 = Fractal;"; > { PixelShader = compile PROFILE ps_fractal (75); }
    pass P_2  < string Script = "RenderColorTarget0 = Matte;"  ; > { PixelShader = compile PROFILE ps_FractalMatte (); }
    pass P_3                                                       { PixelShader = compile PROFILE ps_oa (s_Matte, 5); } 
 }
 
 technique tech_FractalMatte2
 {
-   pass P_1  < string Script = "RenderColorTarget0 = Fractal;"; > { PixelShader = compile PROFILE ps_fractal2 (); }
+   pass P_1  < string Script = "RenderColorTarget0 = Fractal;"; > { PixelShader = compile PROFILE ps_fractal (30); }
    pass P_2  < string Script = "RenderColorTarget0 = Matte;"  ; > { PixelShader = compile PROFILE ps_FractalMatte (); }
    pass P_3                                                       { PixelShader = compile PROFILE ps_oa (s_Matte, 5); } 
 }
