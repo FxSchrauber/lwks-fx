@@ -66,7 +66,7 @@ float FgOpacity
    float MaxVal = 1.0;
 > = 1;
 
-int SelectBg
+int SetTechnique
 <
    string Description = "Select Bg";
    string Enum = "Bg Input,"
@@ -74,7 +74,8 @@ int SelectBg
                  "90% Luminance,"
                  "10% Luminance,"
                  "Alpha Channel,"
-                 "FractalMatte";
+                 "Fractal Matte 1,"
+                 "Fractal Matte 2";
 > = 0;
 
 /** bool EnableBgPattern
@@ -197,8 +198,8 @@ texture Matte   : RenderColorTarget;
 // Samplers
 //--------------------------------------------------------------//
 
-sampler FgSampler   = sampler_state { Texture = <fg>; };
-sampler BgSampler   = sampler_state { Texture = <bg>; };
+sampler s_Fg   = sampler_state { Texture = <fg>; };
+sampler s_Bg   = sampler_state { Texture = <bg>; };
 sampler s_Fractal   = sampler_state { Texture = <Fractal>; };
 sampler s_Matte     = sampler_state { Texture = <Matte>; };
 
@@ -228,13 +229,27 @@ float3 fn_diamondPattern (float2 uv, float3 color1, float3 color2, float numberH
 // Shaders
 //-----------------------------------------------------------------------------------------//
 
-float4 ps_fractal (float2 xy : TEXCOORD) : COLOR
+float4 ps_fractal1 (float2 xy : TEXCOORD) : COLOR
 {  
    float speed = 0.25 * ((cos(_Length/Pulse  * _Progress) + 1) /2);
 
    float4 retval = 1.0.xxxx;
    float3 f = float3 (xy, FracOffs);
    for (int i = 0; i < 75; i++) {
+      f.xzy = float3 (1.3, 0.999, 0.7) * (abs ((abs (f) / dot (f, f) - float3 (1.0, 1.0, speed))));
+   }
+   retval.rgb = f;
+   return retval;
+}
+
+
+float4 ps_fractal2 (float2 xy : TEXCOORD) : COLOR
+{  
+   float speed = 0.25 * ((cos(_Length/Pulse  * _Progress) + 1) /2);
+
+   float4 retval = 1.0.xxxx;
+   float3 f = float3 (xy, FracOffs);
+   for (int i = 0; i < 30; i++) {
       f.xzy = float3 (1.3, 0.999, 0.7) * (abs ((abs (f) / dot (f, f) - float3 (1.0, 1.0, speed))));
    }
    retval.rgb = f;
@@ -285,11 +300,10 @@ float4 ps_FractalMatte (float2 uv : TEXCOORD) : COLOR
 
 
 
-float4 ps_oa( float2 xy0 : TEXCOORD0, float2 xy1 : TEXCOORD1, float2 xy2 : TEXCOORD2 ) : COLOR 
+float4 ps_oa( float2 xy0 : TEXCOORD0, float2 xy1 : TEXCOORD1, float2 xy2 : TEXCOORD2, uniform sampler bgSampler, uniform float SelectBg ) : COLOR 
 {  
-   float4 fg    = tex2D( FgSampler, xy1 );
-   float4 bg    = tex2D( BgSampler, xy2 );
-   float4 matte = tex2D( s_Matte  , xy2 );
+   float4 fg    = tex2D( s_Fg, xy1 );
+   float4 bg    = tex2D( bgSampler, xy2 );
    float4 mask  = fg; 
 
    fg = fn_setFgLift (fg, FgLift);
@@ -298,7 +312,6 @@ float4 ps_oa( float2 xy0 : TEXCOORD0, float2 xy1 : TEXCOORD1, float2 xy2 : TEXCO
    if (SelectBg == 1) bg = float4 (fn_diamondPattern (xy0, 0.4, 0.6, 120, 1000.0), 1.0);
    if (SelectBg == 2) bg = float4 (0.90.xxx, 1.0);
    if (SelectBg == 3) bg = float4 (0.10.xxx, 1.0);
-   if (SelectBg == 5) bg = matte;
   
    float4 ret = lerp( bg, fg, alpha * FgOpacity);
 
@@ -313,9 +326,37 @@ float4 ps_oa( float2 xy0 : TEXCOORD0, float2 xy1 : TEXCOORD1, float2 xy2 : TEXCO
 // Techniques
 //-----------------------------------------------------------------------------------------//
 
-technique test01
+
+technique tech_BgInput
+{  pass P_1  { PixelShader = compile PROFILE ps_oa(s_Bg, 0); }}
+
+
+technique tech_DiamondPattern
+{  pass P_1  { PixelShader = compile PROFILE ps_oa(s_Bg, 1); }} 
+
+
+technique tech_90Luminance
+{  pass P_1  { PixelShader = compile PROFILE ps_oa(s_Bg, 2); }} 
+
+
+technique tech_10Luminance
+{  pass P_1  { PixelShader = compile PROFILE ps_oa(s_Bg, 3); }} 
+
+
+technique tech_AlphaChannel
+{  pass P_1  { PixelShader = compile PROFILE ps_oa(s_Bg, 4); }} 
+
+
+technique tech_FractalMatte1
 {
-   pass P_1  < string Script = "RenderColorTarget0 = Fractal;"; > { PixelShader = compile PROFILE ps_fractal (); }
+   pass P_1  < string Script = "RenderColorTarget0 = Fractal;"; > { PixelShader = compile PROFILE ps_fractal1 (); }
    pass P_2  < string Script = "RenderColorTarget0 = Matte;"  ; > { PixelShader = compile PROFILE ps_FractalMatte (); }
-   pass P_3                                                       { PixelShader = compile PROFILE ps_oa(); } 
+   pass P_3                                                       { PixelShader = compile PROFILE ps_oa (s_Matte, 5); } 
+}
+
+technique tech_FractalMatte2
+{
+   pass P_1  < string Script = "RenderColorTarget0 = Fractal;"; > { PixelShader = compile PROFILE ps_fractal2 (); }
+   pass P_2  < string Script = "RenderColorTarget0 = Matte;"  ; > { PixelShader = compile PROFILE ps_FractalMatte (); }
+   pass P_3                                                       { PixelShader = compile PROFILE ps_oa (s_Matte, 5); } 
 }
