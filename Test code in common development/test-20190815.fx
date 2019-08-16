@@ -6,7 +6,6 @@
 
 /**
 'EasyOverlay' is a luminance keyer for overlays which show luminance for transparency, i.e. full transparency appears as solid black in the overlay. The keyer works also on overlays with alpha channel. It reveals transparency using a black&white mask created from the foreground.
-
 The presets should work for most material of that kind with good looking results. If adjustments should be necessary, start with 'MaskGain'. 'Fg Lift' influences overall brightness of the overly while preserving the highlights. 'Fg Opacity' is e.g. useful to dissolve from/to the overerlay using keyframes.
 */
 
@@ -22,7 +21,7 @@ The presets should work for most material of that kind with good looking results
 
 int _LwksEffectInfo
 <  string EffectGroup = "GenericPixelShader";
-   string Description = "EasyOverlayNext3";
+   string Description = "EasyOverlayNext3-mod";
    string Category    = "Key";
    string SubCategory = "Key Extras";
    string Notes       = "For overlays where luminance represents transparancy";
@@ -32,9 +31,9 @@ int _LwksEffectInfo
 // Globals Definitions and declarations
 //--------------------------------------------------------------//
 
-
 float _OutputAspectRatio;
 float _Progress;
+float _Length;
 
 #define PI       3.141592654
 #define PI_2     6.283185
@@ -44,9 +43,6 @@ float _Progress;
 #define R_WEIGHT 0.2989
 #define G_WEIGHT 0.5866
 #define B_WEIGHT 0.1145
-
-
-
 
 //--------------------------------------------------------------//
 // Parameters
@@ -85,10 +81,10 @@ int SelectBg
 <	
 	string Description = "Enable Bg Pattern";
 > = false;
-*/
+**/
 
 
-/*
+/**
 float Opacity
 <
    string Description = "Opacity";   
@@ -96,7 +92,15 @@ float Opacity
    float MinVal = 0.0;
    float MaxVal = 1.0;
 > = 1.0;
-*/
+**/
+
+float Pulse
+<
+   string Description = "Pulse";   
+   string Group = "Matte"; 
+   float MinVal = 1;
+   float MaxVal = 16;
+> = 8.0;
 
 float FracOffs
 <
@@ -106,13 +110,17 @@ float FracOffs
    float MaxVal = 1.00;
 > = 0.0;
 
-float FracRate
+
+/**
+float FracRate = 0.5
 <
    string Description = "Fractal rate";   
    string Group = "Matte"; 
    float MinVal = 0.00;
    float MaxVal = 1.00;
 > = 0.5;
+**/
+
 
 float4 Colour
 <
@@ -145,9 +153,7 @@ float SatParam
    float MaxVal = 1.0;
 > = 0.0;
 
-
-
-/*
+/**
 float Gain
 <
    string Description = "Gain";
@@ -155,7 +161,6 @@ float Gain
    float MinVal = 0.00;
    float MaxVal = 4.00;
 > = 1.0;
-
 float Gamma
 <
    string Description = "Gamma";
@@ -163,7 +168,6 @@ float Gamma
    float MinVal = 0.0;
    float MaxVal = 4.00;
 > = 1.00;
-
 float Brightness
 <
    string Description = "Brightness";
@@ -171,7 +175,6 @@ float Brightness
    float MinVal = -1.00;
    float MaxVal = 1.00;
 > = 0.0;
-
 float Contrast
 <
    string Description = "Contrast";
@@ -179,8 +182,7 @@ float Contrast
    float MinVal = 0.00;
    float MaxVal = 4.00;
 > = 1.0;
-
-*/
+**/
 
 //--------------------------------------------------------------//
 // Inputs
@@ -191,7 +193,6 @@ texture bg;
 texture Fractal : RenderColorTarget;
 texture Matte   : RenderColorTarget;
 
-
 //--------------------------------------------------------------//
 // Samplers
 //--------------------------------------------------------------//
@@ -200,9 +201,6 @@ sampler FgSampler   = sampler_state { Texture = <fg>; };
 sampler BgSampler   = sampler_state { Texture = <bg>; };
 sampler s_Fractal   = sampler_state { Texture = <Fractal>; };
 sampler s_Matte     = sampler_state { Texture = <Matte>; };
-
-
-
 
 //--------------------------------------------------------------//
 // Functions called by shaders 
@@ -226,29 +224,22 @@ float3 fn_diamondPattern (float2 uv, float3 color1, float3 color2, float numberH
    return (lerp (color1, color2, lerp( mix.y , 1.0 - mix.y, mix.x)));
 }
 
-
 //-----------------------------------------------------------------------------------------//
 // Shaders
 //-----------------------------------------------------------------------------------------//
 
-
 float4 ps_fractal (float2 xy : TEXCOORD) : COLOR
-{
-   float speed = _Progress * FracRate;
+{  
+   float speed = 0.25 * ((cos(_Length/Pulse  * _Progress) + 1) /2);
+
    float4 retval = 1.0.xxxx;
    float3 f = float3 (xy, FracOffs);
-
    for (int i = 0; i < 75; i++) {
-      f.xzy = float3 (1.3, 0.999, 0.7) * (abs ((abs (f) / dot (f, f) - float3 (1.0, 1.0, speed * 0.5))));
+      f.xzy = float3 (1.3, 0.999, 0.7) * (abs ((abs (f) / dot (f, f) - float3 (1.0, 1.0, speed))));
    }
-
    retval.rgb = f;
-
    return retval;
 }
-
-
-
 
 float4 ps_FractalMatte (float2 uv : TEXCOORD) : COLOR 
 {
@@ -288,9 +279,7 @@ float4 ps_FractalMatte (float2 uv : TEXCOORD) : COLOR
    retval = (Hrange < 1.0) ? temp.zyxw : (Hrange < 2.0) ? temp.xzyw : temp.yxzw;
    // temp   = (((pow (retval, 1.0 / GammVal) * Gain) + Brightness.xxxx - 0.5.xxxx) * Contrast) + 0.5.xxxx;
    // retval = lerp (Fgd, temp, Opacity);
-
    retval.a = 1.0;
-
    return retval;
 }
 
@@ -300,7 +289,7 @@ float4 ps_oa( float2 xy0 : TEXCOORD0, float2 xy1 : TEXCOORD1, float2 xy2 : TEXCO
 {  
    float4 fg    = tex2D( FgSampler, xy1 );
    float4 bg    = tex2D( BgSampler, xy2 );
-   float4 matte = tex2D( s_Matte  , xy0 );
+   float4 matte = tex2D( s_Matte  , xy2 );
    float4 mask  = fg; 
 
    fg = fn_setFgLift (fg, FgLift);
@@ -311,7 +300,6 @@ float4 ps_oa( float2 xy0 : TEXCOORD0, float2 xy1 : TEXCOORD1, float2 xy2 : TEXCO
    if (SelectBg == 3) bg = float4 (0.10.xxx, 1.0);
    if (SelectBg == 5) bg = matte;
   
-
    float4 ret = lerp( bg, fg, alpha * FgOpacity);
 
    if (SelectBg == 4)
@@ -321,13 +309,9 @@ float4 ps_oa( float2 xy0 : TEXCOORD0, float2 xy1 : TEXCOORD1, float2 xy2 : TEXCO
    return ret;
 }
 
-
-
-
 //-----------------------------------------------------------------------------------------//
 // Techniques
 //-----------------------------------------------------------------------------------------//
-
 
 technique test01
 {
@@ -335,12 +319,3 @@ technique test01
    pass P_2  < string Script = "RenderColorTarget0 = Matte;"  ; > { PixelShader = compile PROFILE ps_FractalMatte (); }
    pass P_3                                                       { PixelShader = compile PROFILE ps_oa(); } 
 }
-
-
-
-
-
-
-
-
- 
