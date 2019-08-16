@@ -300,7 +300,8 @@ float4 ps_FractalMatte (float2 uv : TEXCOORD) : COLOR
 
 
 
-float4 ps_oa( float2 xy0 : TEXCOORD0, float2 xy1 : TEXCOORD1, float2 xy2 : TEXCOORD2, uniform sampler bgSampler, uniform float SelectBg ) : COLOR 
+float4 ps_oa( float2 xy0 : TEXCOORD0, float2 xy1 : TEXCOORD1, float2 xy2 : TEXCOORD2, 
+              uniform sampler bgSampler, uniform float SelectBg ) : COLOR 
 {  
    float4 fg    = tex2D( s_Fg, xy1 );
    float4 bg    = tex2D( bgSampler, xy2 );
