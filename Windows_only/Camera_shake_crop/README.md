@@ -25,8 +25,7 @@ Horizontal and vertical shifts based on a random generator.
 - Several automatic zoom modes to avoid the visibility of the frame edges.  
 - Different reflection modes of the edges to allow a low zoom at strong shifts.  
 - Cropping for adaptation to letterbox material.  
-  *(This refers to material that has already been imported with black bars, or previous effects have created these bars.  
-  This **does not** refer to letterboxing created using the "Letterbox" project settings.)*  
+  *(This refers to material that has already been imported with black bars, or previous effects have created these bars. This **does not** refer to letterboxing created using the "Letterbox" project settings.)*  
   By default, the original material is reflected at the set crop edges before cropping is applied. 
   This prevents the black edges of letterbox material from becoming visible when shaking.  
   ![](IMG/img.jpg)  
