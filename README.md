@@ -12,7 +12,7 @@ or
 ----------------------------------------------------------------------------
 
 ## Additional effects:
-Some of these effects have limited compatibility, others are prototypes whose functionality should be improved or tested.  
+Some of the following effects have limited compatibility, others are prototypes whose functionality should be improved or tested.  
 Maybe some of the effects meet your requirements.  If not, you are welcome to develop the code further.
 
 - [DVE / DVE Extras / **Orbit**](DVE/DVE_Extras/Orbit/README.md)
