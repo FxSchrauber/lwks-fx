@@ -2,7 +2,7 @@
 
 # Random asymmetric flicker
 
-### *Filename:* <a href="RandomFlickerB1.2.fx" download>Orbit.fx</a> 
+### *Filename:* <a href="RandomFlickerB1.2.fx" download>RandomFlickerB1.2.fx</a> 
 [Download as zip-file](RandomFlickerB1.2.zip)
 
 *Category:* **User**  
