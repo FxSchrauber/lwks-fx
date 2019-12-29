@@ -5,9 +5,6 @@
 
 The archive with many effects developed and tested by users can be found in the Lightworks forum.
 ### <a href="https://www.lwks.com/index.php?option=com_kunena&func=view&catid=7&id=188603&Itemid=81#ftop" TARGET="_blank">lwks.com</a>  
-or
-### <a href="https://fx-planet.ovh/" TARGET="_blank">fx-planet.ovh</a> 
-
 
 ----------------------------------------------------------------------------
 
