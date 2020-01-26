@@ -14,8 +14,8 @@ Download as zip-file: [lwks.com/../../../../Artifacts-blur_20_03.zip](https://ww
 --------------------------------------------------------------------------
 
 ### Effect descriptions:
-See: [Lightworks Forum](https://www.lwks.com/index.php?option=com_kunena&func=view&catid=7&id=209274&Itemid=81#ftop  
-(And in the other linked posts of this linked thread.)
+See: [Lightworks Forum](https://www.lwks.com/index.php?option=com_kunena&func=view&catid=7&id=209274&Itemid=81#ftop)  
+(And in the other linked posts of this linked thread.)  
 
 
 
