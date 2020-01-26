@@ -17,4 +17,4 @@ Maybe some of the effects meet your requirements.  If not, you are welcome to de
 - [**Diffusion** (Transition as a pixel fog)](Mix/Prototypes/Diffusion/README.md)
 - [**From circle to rectangle** (Distortion)](Stylize/Distortion/CircleToRectangle/README.md)
 - [**Random asymmetric flicker** (Switches)](User/Switches/RandomFlicker/README.md)
-- [**Windows only** ((effects with limited ompatibility)](Windows_only/README.md)
+- [**Windows only** (effects with limited ompatibility)](Windows_only/README.md)
