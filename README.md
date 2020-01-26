@@ -12,9 +12,9 @@ The archive with many effects developed and tested by users can be found in the 
 Some of the following effects have limited compatibility, others are prototypes whose functionality should be improved or tested.  
 Maybe some of the effects meet your requirements.  If not, you are welcome to develop the code further.
 
-- [DVE / DVE Extras / **Orbit**](DVE/DVE_Extras/Orbit/README.md)
-- [Mix / Prototypes / **Diffusion_Test**](Mix/Prototypes/Diffusion/README.md)
-- [Stylize / Distortion / **From circle to rectangle**](Stylize/Distortion/CircleToRectangle/README.md)
-- [User / Switches / **Random asymmetric flicker**](User/Switches/RandomFlicker/README.md)
-- [**Windows only**](Windows_only/README.md)
-
+- [**Remove colour banding or compression artefacts**](Colour_banding/README.md)
+- [**Orbit** (texture circle around the Effect center).](DVE/DVE_Extras/Orbit/README.md)
+- [**Diffusion** (Transition as a pixel fog)](Mix/Prototypes/Diffusion/README.md)
+- [**From circle to rectangle** (Distortion)](Stylize/Distortion/CircleToRectangle/README.md)
+- [**Random asymmetric flicker** (Switches)](User/Switches/RandomFlicker/README.md)
+- [**Windows only** ((effects with limited ompatibility)](Windows_only/README.md)
