@@ -26,9 +26,8 @@ See: [Lightworks Forum](https://www.lwks.com/index.php?option=com_kunena&func=vi
 ### Filename: UncountourV2.fx  
 Name: "Dithering of color depths from 16 or 32 bit to 8 bit"  
 Download as zip-file: [www.lwks.com .. Ditheringcolourdepth03_03.zip](https://www.lwks.com/media/kunena/attachments/348533/Ditheringcolourdepth03_03.zip)  
-Effect description: RGB-colour depth dithering (Invisible minimum grain size)  
-See: [www.lwks.com ..](https://www.lwks.com/index.php?option=com_kunena&func=view&catid=7&id=209274&limit=15&limitstart=15&Itemid=81#209946)  
-**Important limitation**: Only useful for RGB exports.  
+Effect description: [RGB-colour depth dithering (Invisible minimum grain size)](https://www.lwks.com/index.php?option=com_kunena&func=view&catid=7&id=209274&limit=15&limitstart=15&Itemid=81#209946)  
+**Important limitation**: [Only useful for RGB exports.](https://www.lwks.com/index.php?option=com_kunena&func=view&catid=7&id=209274&limit=15&limitstart=30&Itemid=81#210013)    
 
 
 --------------------------------------------------------------------------
