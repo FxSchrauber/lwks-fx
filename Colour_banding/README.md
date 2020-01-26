@@ -2,7 +2,7 @@
 
 # Remove colour banding or compression artefacts.
 
-## Two effects: 
+## Two prototypes: 
 ### Filename: UncountourV2.fx  
 Download as zip-file: https://www.lwks.com/media/kunena/attachments/6375/UncountourV2.zip  
 
